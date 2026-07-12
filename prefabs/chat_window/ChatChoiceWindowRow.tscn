@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cey4bwu7od130"]
+
+[ext_resource type="Texture2D" uid="uid://caan8u6p5fme6" path="res://assets/vector_graphics/white_filled_triangle__right.svg" id="1_a0gcb"]
+[ext_resource type="Script" uid="uid://b8vtuudamdf63" path="res://prefabs/chat_window/ChatChoiceWindowRow.gd" id="1_knagq"]
+[ext_resource type="FontFile" uid="uid://bdvrgt841l73v" path="res://assets/fonts/ark-pixel-12px-monospaced-latin.otf" id="3_7dxr1"]
+
+[node name="ChatChoiceWindowRow" type="HBoxContainer" unique_id=1187296322]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 32.0
+offset_bottom = 30.0
+focus_mode = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_knagq")
+
+[node name="RightArrow" type="TextureRect" parent="." unique_id=2114155168]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+texture = ExtResource("1_a0gcb")
+stretch_mode = 3
+
+[node name="Space_01" type="Control" parent="." unique_id=205537046]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1075582789]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7dxr1")
+theme_override_font_sizes/font_size = 40
+vertical_alignment = 1
+
+[connection signal="focus_entered" from="." to="." method="on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="on_focus_exited"]

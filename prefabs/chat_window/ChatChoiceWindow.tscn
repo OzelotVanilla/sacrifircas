@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ceq46web7vmaw"]
+
+[ext_resource type="Script" uid="uid://8xu544qljqfv" path="res://prefabs/chat_window/ChatChoiceWindow.gd" id="1_iaymf"]
+[ext_resource type="StyleBox" uid="uid://bivtwg8cnosv0" path="res://assets/stylebox/pixel_style.tres" id="1_s28wg"]
+
+[node name="ChatChoiceWindow" type="PanelContainer" unique_id=634427035]
+focus_mode = 2
+theme_override_styles/panel = ExtResource("1_s28wg")
+script = ExtResource("1_iaymf")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=730337154]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="OptionRowContainer" type="VBoxContainer" parent="Margin" unique_id=624837620]
+layout_mode = 2
+theme_override_constants/separation = 20

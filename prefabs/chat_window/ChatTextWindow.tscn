@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dwahhug2mes4e"]
+
+[ext_resource type="FontFile" uid="uid://bdvrgt841l73v" path="res://assets/fonts/ark-pixel-12px-monospaced-latin.otf" id="1_7tocs"]
+[ext_resource type="Script" uid="uid://bxcpntwfulp3v" path="res://prefabs/chat_window/ChatTextWindow.gd" id="1_axfyg"]
+[ext_resource type="Texture2D" uid="uid://dry76f7nvpo72" path="res://assets/vector_graphics/white_filled_triangle.svg" id="1_mtkf1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aa427"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ChatTextWindow" type="PanelContainer" unique_id=1038044236]
+custom_minimum_size = Vector2(0, 195)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 195.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+focus_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aa427")
+script = ExtResource("1_axfyg")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1431010329]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 25
+
+[node name="Label" type="Label" parent="Margin" unique_id=418531367]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_7tocs")
+theme_override_font_sizes/font_size = 64
+vertical_alignment = 1
+text_overrun_behavior = 3
+max_lines_visible = 2
+
+[node name="DownArrow" type="TextureRect" parent="." unique_id=153758018]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position = Vector2(-10, -8)
+texture = ExtResource("1_mtkf1")
+flip_v = true

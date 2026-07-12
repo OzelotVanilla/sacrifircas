@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://xr5gcbel8xrb"]
+
+[ext_resource type="Script" uid="uid://celsgik7mvpyf" path="res://prefabs/chat_window/ChatOverlay.gd" id="1_ul2wd"]
+[ext_resource type="PackedScene" uid="uid://dwahhug2mes4e" path="res://prefabs/chat_window/ChatTextWindow.tscn" id="2_qphun"]
+[ext_resource type="PackedScene" uid="uid://ceq46web7vmaw" path="res://prefabs/chat_window/ChatChoiceWindow.tscn" id="2_rj3jm"]
+[ext_resource type="StyleBox" uid="uid://bivtwg8cnosv0" path="res://assets/stylebox/pixel_style.tres" id="4_0x7oo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qphun"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ChatOverlay" type="Control" unique_id=988993086]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 2
+script = ExtResource("1_ul2wd")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1547018378]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=1522986731]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="ChatChoiceWindow" parent="Margin/VBox" unique_id=634427035 instance=ExtResource("2_rj3jm")]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_qphun")
+
+[node name="Space_01" type="Control" parent="Margin/VBox" unique_id=543340980]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ChatTextWindow" parent="Margin/VBox" unique_id=1038044236 instance=ExtResource("2_qphun")]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_0x7oo")
+
+[connection signal="focus_entered" from="." to="." method="on_focus_entered"]
+[connection signal="choice_selected" from="Margin/VBox/ChatChoiceWindow" to="." method="on_ChatChoiceWindow_choice_selected"]
+[connection signal="finished" from="Margin/VBox/ChatTextWindow" to="." method="on_ChatTextWindow_finished"]
