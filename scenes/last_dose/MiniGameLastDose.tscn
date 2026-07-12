@@ -39,7 +39,8 @@ ONLY ONE of you survive."
 side_2_story = "You are the engineer
 who can fix the engine.
 But it is also depends on you
-that you can escape from the ship."
+that you can escape from the ship.
+STAY or ESCAPE."
 
 [node name="Medicine" type="Label" parent="." unique_id=1667171020]
 layout_mode = 0
