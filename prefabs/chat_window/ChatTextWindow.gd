@@ -29,6 +29,9 @@ var has_remaining_text_to_show: bool:
     get():
         return self.label__ref.get_line_count() - self.label__ref.lines_skipped > 2
 
+## Become false when need to focus to option window.
+var is_primary_focused: bool = true
+
 
 func _unhandled_input(event: InputEvent) -> void: self.__onUnhandledInput__(event)
 
@@ -72,7 +75,7 @@ func adjustVisibilityOfDownArrow():
         self.down_arrow__ref.show()
 
 func __onUnhandledInput__(event: InputEvent) -> void:
-    if event.is_action_pressed("ui_accept") and self.has_focus():
+    if event.is_action_pressed("ui_accept") and self.is_primary_focused:
         self.on_input__ui_accept()
         get_viewport().set_input_as_handled()
 

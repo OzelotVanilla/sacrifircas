@@ -28,6 +28,7 @@ func startStoryAndChoiceProcess(text: String):
     self.chat_text_window__ref.show()
     self.chat_text_window__ref.text = text
     self.text_being_displayed__cache = text
+    self.chat_text_window__ref.is_primary_focused = true
     self.chat_text_window__ref.grab_focus()
 
 func showWhetherReadAgainChoice():
@@ -47,12 +48,15 @@ func on_ChatChoiceWindow_choice_selected(choice_value: String):
 
 func on_ChatTextWindow_finished() -> void:
     self.showWhetherReadAgainChoice()
+    self.chat_text_window__ref.is_primary_focused = false
 
 func on_focus_entered() -> void:
     if self.chat_choice_window__ref.is_visible_in_tree():
         self.chat_choice_window__ref.grab_focus()
+        self.chat_text_window__ref.is_primary_focused = false
     else:
         self.chat_text_window__ref.grab_focus()
+        self.chat_text_window__ref.is_primary_focused = true
 
 func __onReady__():
     pass

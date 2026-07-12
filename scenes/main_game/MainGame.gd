@@ -9,7 +9,9 @@ var last_dose__scene := preload(
 
 @onready var game_container__ref: Control = $GameContainer
 
-@onready var line_edit__ref: LineEdit = $VBox/LineEdit
+@onready var menu_ui_vbox__ref: VBoxContainer = $MenuUIVBox
+
+@onready var line_edit__ref: LineEdit = $MenuUIVBox/LineEdit
 
 
 func _ready() -> void: self.__onReady__()
@@ -58,6 +60,9 @@ func changeToGame(
 ):
     self.requestCloseCurrentGame()
 
+    self.game_container__ref.show()
+    self.menu_ui_vbox__ref.hide()
+
     var game: BaseGame = scene.instantiate()
     self.game_container__ref.add_child(game)
     game.level_variation = level_variation
@@ -70,7 +75,11 @@ func requestCloseCurrentGame():
     for game in self.game_container__ref.get_children():
         self.game_container__ref.remove_child(game)
         game.queue_free()
+
+    self.game_container__ref.hide()
+    self.menu_ui_vbox__ref.show()
     self.line_edit__ref.clear()
+    self.line_edit__ref.grab_focus.call_deferred()
 
 func __onReady__():
     save_manager.createSave()
