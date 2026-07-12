@@ -32,3 +32,9 @@ var main_game__ref: MainGame
 @abstract func on_choice_2_selected()
 
 @abstract func on_no_choice_was_made()
+
+## In order to load stories, etc.
+@abstract func postInit() -> void
+
+static func getGameResult(player_01_choice: int, player_02_choice: int) -> String:
+    return "Not Impl-ed."

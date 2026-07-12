@@ -42,7 +42,7 @@ func on_TimeRemainBar_timeout() -> void:
 func stopTimerAndShowChoiceRecorded():
     self.time_remain_bar__ref.stopCountingAndShowChoiceRecorded()
 
-func __onReady__():
+func postInit():
     var player_side: int = (self.get_parent() as BaseGame).player_side
     self.chat_overlay__ref.show()
     self.chat_overlay__ref.startStoryAndChoiceProcess(str(
@@ -51,4 +51,5 @@ func __onReady__():
     ))
     self.chat_overlay__ref.grab_focus()
 
+func __onReady__():
     self.time_remain_bar__ref.hide()

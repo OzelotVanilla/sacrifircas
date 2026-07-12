@@ -64,6 +64,7 @@ func changeToGame(
     game.player_side     = player_side
     game.player_code     = player_code
     game.main_game__ref  = self
+    game.postInit()
 
 func requestCloseCurrentGame():
     for game in self.game_container__ref.get_children():

@@ -1,3 +1,4 @@
+class_name MiniGameLastDose
 extends BaseGame
 
 
@@ -33,6 +34,9 @@ func on_no_choice_was_made():
     save_manager.save.choice_dict[self.player_code] = 0
     await get_tree().create_timer(3).timeout
     self.main_game__ref.requestCloseCurrentGame()
+
+func postInit():
+    self.game_control_overlay__ref.postInit() # Load stories to show, etc.
 
 func __onReady__():
     self.player_01__ref.hide()
