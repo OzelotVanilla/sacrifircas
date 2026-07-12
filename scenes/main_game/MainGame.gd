@@ -52,7 +52,9 @@ func showLineEditErrorInput(error: String):
     self.line_edit__ref.edit()
 
 func on_FinishAndStatButton_pressed() -> void:
-    pass # Replace with function body.
+    get_tree().change_scene_to_file(
+        "res://scenes/main_game/game_result_page/GameResultPage.tscn"
+    )
 
 func changeToGame(
     scene: PackedScene, level_variation: int, player_side: int,

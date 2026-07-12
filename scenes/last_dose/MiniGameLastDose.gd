@@ -41,3 +41,63 @@ func postInit():
 func __onReady__():
     self.player_01__ref.hide()
     self.player_02__ref.hide()
+
+static func getGameResult(player_01_choice: int, player_02_choice: int) -> String:
+    # P1: Give Engineer; Give Themselves and Escape
+    # P2: Keep fixing; Escape
+    var match_code := player_01_choice * 10 + player_02_choice
+    match match_code:
+        00: return str(
+            "The ship explodes and no one was alive. ",
+            "But, there is a sealed medicine box,",
+            " floating with the relic of the explosion."
+        )
+
+        01: return str(
+            "The ship was safe. ",
+            "The engineer and the doctor are praised as hero who sacrified themselves."
+        )
+
+        02: return str(
+            "The ship explodes and the most staff died. ",
+            "An escape hatch was launched before explosion. ",
+            "But where would they go ?"
+        )
+
+        10: return str(
+            "The ship explodes and no one was alive. ",
+            "Nobody knows what happened in that ship."
+        )
+
+        11: return str(
+            "The ship was safe. ",
+            "The doctor is praised as hero who sacrified themselves."
+        )
+
+        12: return str(
+            "The ship explodes and the most staff died. ",
+            "An escape hatch was launched before explosion. ",
+            "But where would they go ?"
+        )
+
+        20: return str(
+            "The ship explodes and the most staff died. ",
+            "An escape hatch was launched before explosion. ",
+            "But where would they go ?"
+        )
+
+        21: return str(
+            "The ship was safe. ",
+            "The engineer is praised as hero who sacrified themselves. ",
+            "But an escape hatch was launched."
+        )
+
+        22: return str(
+            "The ship explodes and the most staff died. ",
+            "Two escape hatches were launched before explosion. ",
+            "But where would they go ?"
+        )
+
+        _:
+            printerr("Should not have this result `", match_code, "`.")
+            return ""

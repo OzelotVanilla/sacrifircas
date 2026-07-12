@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cx2ls7fwb6p8p"]
+
+[ext_resource type="Script" uid="uid://c1nt3gl81vqjd" path="res://scenes/main_game/game_result_page/GameResultPage.gd" id="1_ifpxi"]
+[ext_resource type="FontFile" uid="uid://bdvrgt841l73v" path="res://assets/fonts/ark-pixel-12px-monospaced-latin.otf" id="2_p3lui"]
+[ext_resource type="StyleBox" uid="uid://bivtwg8cnosv0" path="res://assets/stylebox/pixel_style.tres" id="3_wccfq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_umwp5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1n8hp"]
+
+[node name="GameResultPage" type="Control" unique_id=1446879895]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ifpxi")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=282118937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Margin" type="MarginContainer" parent="VBox" unique_id=1911246670]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Scroll" type="ScrollContainer" parent="VBox/Margin" unique_id=308287654]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/Margin/Scroll" unique_id=720114119]
+custom_minimum_size = Vector2(1260, 600)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_p3lui")
+theme_override_font_sizes/font_size = 48
+text = "game result to show"
+autowrap_mode = 3
+
+[node name="Spacer_01" type="Control" parent="VBox" unique_id=224817938]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="RestartGameButton" type="Button" parent="VBox" unique_id=1548551070]
+custom_minimum_size = Vector2(360, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_fonts/font = ExtResource("2_p3lui")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_wccfq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_umwp5")
+theme_override_styles/hover = ExtResource("3_wccfq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1n8hp")
+theme_override_styles/focus = ExtResource("3_wccfq")
+text = "Restart Game"
+
+[connection signal="pressed" from="VBox/RestartGameButton" to="." method="on_RestartGameButton_pressed"]

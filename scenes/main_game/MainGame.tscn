@@ -4,15 +4,21 @@
 [ext_resource type="FontFile" uid="uid://bdvrgt841l73v" path="res://assets/fonts/ark-pixel-12px-monospaced-latin.otf" id="2_bf1bb"]
 [ext_resource type="StyleBox" uid="uid://bivtwg8cnosv0" path="res://assets/stylebox/pixel_style.tres" id="3_j2o7p"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf1bb"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.9764706, 0.1254902, 0.3019608, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51h8d"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cly3p"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msl2r"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tg3ls"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kxs62"]
 
 [node name="MainGame" type="Control" unique_id=681627672]
 layout_mode = 3
@@ -78,15 +84,15 @@ alignment = 1
 [node name="FinishAndStatButton" type="Button" parent="MenuUIVBox/HBox" unique_id=96607839]
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.7294118, 0.14901961, 0.21176471, 1)
+theme_override_colors/font_hover_color = Color(0.8980392, 0.5921569, 0.69803923, 1)
 theme_override_fonts/font = ExtResource("2_bf1bb")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("3_j2o7p")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bf1bb")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_51h8d")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_cly3p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_msl2r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bf1bb")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_tg3ls")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_kxs62")
+theme_override_styles/focus = ExtResource("3_j2o7p")
 text = "Finish and See Stats"
 
 [connection signal="text_submitted" from="MenuUIVBox/LineEdit" to="." method="on_LineEdit_text_submitted"]
