@@ -14,7 +14,19 @@ func _ready() -> void: self.__onReady__()
 
 
 func copyCacheToClipboard():
-    DisplayServer.clipboard_set(self.result_cache)
+    if OS.has_feature("web"):
+        var js_code := str(
+            """
+            navigator.clipboard.writeText(
+            """,
+            JSON.stringify(self.result_cache), # Already has double quote around.
+            """
+            )
+            """
+        )
+        JavaScriptBridge.eval(js_code)
+    else:
+        DisplayServer.clipboard_set(self.result_cache)
 
 func refreshResultDisplay():
     self.label__ref.text = self.result_cache
