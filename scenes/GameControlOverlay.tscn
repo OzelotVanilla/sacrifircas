@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b6bf46l00uje8"]
+
+[ext_resource type="Script" uid="uid://bu01tvvkf4wwk" path="res://scenes/GameControlOverlay.gd" id="1_2pb4m"]
+[ext_resource type="PackedScene" uid="uid://xr5gcbel8xrb" path="res://prefabs/chat_window/ChatOverlay.tscn" id="2_l6vad"]
+[ext_resource type="PackedScene" uid="uid://y13xj8sr5can" path="res://prefabs/time_remain_bar/TimeRemainBar.tscn" id="3_shyxh"]
+
+[node name="GameControlOverlay" type="Control" unique_id=1909701698]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_2pb4m")
+
+[node name="ChatOverlay" parent="." unique_id=988993086 instance=ExtResource("2_l6vad")]
+layout_mode = 1
+
+[node name="TimeRemainBar" parent="." unique_id=1250749349 instance=ExtResource("3_shyxh")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.9
+anchor_right = 0.8
+anchor_bottom = 0.9
+
+[connection signal="finished" from="ChatOverlay" to="." method="on_ChatOverlay_finished"]
+[connection signal="timeout" from="TimeRemainBar" to="." method="on_TimeRemainBar_timeout"]
