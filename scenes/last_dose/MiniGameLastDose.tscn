@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://bh4wln0hgn0iu"]
+
+[ext_resource type="Script" uid="uid://ci6eqkqj1k0y" path="res://scenes/last_dose/MiniGameLastDose.gd" id="1_hvh77"]
+[ext_resource type="PackedScene" uid="uid://b6bf46l00uje8" path="res://scenes/GameControlOverlay.tscn" id="2_u62n2"]
+[ext_resource type="FontFile" uid="uid://bdvrgt841l73v" path="res://assets/fonts/ark-pixel-12px-monospaced-latin.otf" id="3_u62n2"]
+[ext_resource type="StyleBox" uid="uid://bivtwg8cnosv0" path="res://assets/stylebox/pixel_style.tres" id="4_5eb4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xm33v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51h8d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cly3p"]
+
+[node name="MiniGameLastDose" type="ColorRect" unique_id=417272345]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvh77")
+
+[node name="GameControlOverlay" parent="." unique_id=852885562 instance=ExtResource("2_u62n2")]
+layout_mode = 1
+story = "You are in a spaceship, but the 
+engine starts getting on fire.
+The engine is generating toxic gas,
+and finally it explodes,
+which KILLS every ship staff.
+Luckily, there is a medicine
+on the table,
+and an engineer is fixing engine."
+side_1_story = "You are the doctor,
+standing near the engine, who
+decides how the medicine is used.
+Use it for yourself to escape,
+or for the engineer
+who fix the engine.
+ONLY ONE of you survive."
+side_2_story = "You are the engineer
+who can fix the engine.
+But it is also depends on you
+that you can escape from the ship."
+
+[node name="Medicine" type="Label" parent="." unique_id=1667171020]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 53.0
+offset_right = 826.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_u62n2")
+theme_override_font_sizes/font_size = 120
+text = "+====>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player_01" type="HBoxContainer" parent="." unique_id=338915176]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Choice_01" type="Button" parent="Player_01" unique_id=1863917728]
+custom_minimum_size = Vector2(450, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.18039216, 0.49411765, 0.08627451, 1)
+theme_override_fonts/font = ExtResource("3_u62n2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("4_5eb4o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xm33v")
+theme_override_styles/hover = ExtResource("4_5eb4o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_51h8d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cly3p")
+text = "Give Engineer.
+Die.
+Ship staff alive"
+
+[node name="Spacer_01" type="Control" parent="Player_01" unique_id=2112005356]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="Choice_02" type="Button" parent="Player_01" unique_id=1856936669]
+custom_minimum_size = Vector2(450, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.5803922, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("3_u62n2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("4_5eb4o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xm33v")
+theme_override_styles/hover = ExtResource("4_5eb4o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_51h8d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cly3p")
+text = "Use and escape.
+Alive.
+Ship staff die"
+
+[node name="Player_02" type="HBoxContainer" parent="." unique_id=2104988976]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Choice_01" type="Button" parent="Player_02" unique_id=667990015]
+custom_minimum_size = Vector2(450, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.18039216, 0.49411765, 0.08627451, 1)
+theme_override_fonts/font = ExtResource("3_u62n2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("4_5eb4o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xm33v")
+theme_override_styles/hover = ExtResource("4_5eb4o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_51h8d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cly3p")
+text = "Keep fix engine.
+Die if no med.
+Ship staff alive."
+
+[node name="Spacer_01" type="Control" parent="Player_02" unique_id=764040621]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="Choice_02" type="Button" parent="Player_02" unique_id=13638274]
+custom_minimum_size = Vector2(450, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.5803922, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("3_u62n2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("4_5eb4o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xm33v")
+theme_override_styles/hover = ExtResource("4_5eb4o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_51h8d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cly3p")
+text = "Escape.
+Alive.
+Ship staff die."
+
+[connection signal="choose_timeout" from="GameControlOverlay" to="." method="on_no_choice_was_made"]
+[connection signal="story_finished" from="GameControlOverlay" to="." method="on_GameControlOverlay_story_finished"]
+[connection signal="pressed" from="Player_01/Choice_01" to="." method="on_choice_1_selected"]
+[connection signal="pressed" from="Player_01/Choice_02" to="." method="on_choice_2_selected"]
+[connection signal="pressed" from="Player_02/Choice_01" to="." method="on_choice_1_selected"]
+[connection signal="pressed" from="Player_02/Choice_02" to="." method="on_choice_2_selected"]
