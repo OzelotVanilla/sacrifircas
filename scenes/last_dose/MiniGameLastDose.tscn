@@ -67,7 +67,7 @@ theme_override_constants/separation = 0
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Choice_01" type="Button" parent="Player_01" unique_id=1863917728]
+[node name="Choice_01" type="Button" parent="Player_01" unique_id=1863917728 groups=["choice_buttons"]]
 custom_minimum_size = Vector2(450, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -89,7 +89,7 @@ Ship staff alive"
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 
-[node name="Choice_02" type="Button" parent="Player_01" unique_id=1856936669]
+[node name="Choice_02" type="Button" parent="Player_01" unique_id=1856936669 groups=["choice_buttons"]]
 custom_minimum_size = Vector2(450, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -120,7 +120,7 @@ theme_override_constants/separation = 0
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Choice_01" type="Button" parent="Player_02" unique_id=667990015]
+[node name="Choice_01" type="Button" parent="Player_02" unique_id=667990015 groups=["choice_buttons"]]
 custom_minimum_size = Vector2(450, 200)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -142,7 +142,7 @@ Ship staff alive."
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 
-[node name="Choice_02" type="Button" parent="Player_02" unique_id=13638274]
+[node name="Choice_02" type="Button" parent="Player_02" unique_id=13638274 groups=["choice_buttons"]]
 custom_minimum_size = Vector2(450, 200)
 layout_mode = 2
 size_flags_horizontal = 4

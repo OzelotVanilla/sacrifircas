@@ -19,21 +19,28 @@ func on_GameControlOverlay_story_finished() -> void:
         self.player_02__ref.show()
 
 func on_choice_1_selected():
+    self.disableChoiceButtons()
     self.game_control_overlay__ref.stopTimerAndShowChoiceRecorded()
     save_manager.save.choice_dict[self.player_code] = 1
     await get_tree().create_timer(3).timeout
     self.main_game__ref.requestCloseCurrentGame()
 
 func on_choice_2_selected():
+    self.disableChoiceButtons()
     self.game_control_overlay__ref.stopTimerAndShowChoiceRecorded()
     save_manager.save.choice_dict[self.player_code] = 2
     await get_tree().create_timer(3).timeout
     self.main_game__ref.requestCloseCurrentGame()
 
 func on_no_choice_was_made():
+    self.disableChoiceButtons()
     save_manager.save.choice_dict[self.player_code] = 0
     await get_tree().create_timer(3).timeout
     self.main_game__ref.requestCloseCurrentGame()
+
+func disableChoiceButtons():
+    for button in get_tree().get_nodes_in_group("choice_buttons"): if button is Button:
+        button.disabled = true
 
 func postInit():
     self.game_control_overlay__ref.postInit() # Load stories to show, etc.
