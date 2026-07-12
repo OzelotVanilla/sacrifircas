@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://x18fwg8aj1ah"]
+
+[ext_resource type="Script" uid="uid://dc3005cvhsesj" path="res://scenes/main_game/MainGame.gd" id="1_qty2d"]
+[ext_resource type="FontFile" uid="uid://bdvrgt841l73v" path="res://assets/fonts/ark-pixel-12px-monospaced-latin.otf" id="2_bf1bb"]
+[ext_resource type="StyleBox" uid="uid://bivtwg8cnosv0" path="res://assets/stylebox/pixel_style.tres" id="3_j2o7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51h8d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cly3p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msl2r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tg3ls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kxs62"]
+
+[node name="MainGame" type="Control" unique_id=681627672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qty2d")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=512049698]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBox" unique_id=1410042307]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bf1bb")
+theme_override_font_sizes/font_size = 64
+text = "Enter your player code:"
+horizontal_alignment = 1
+
+[node name="Spacer_01" type="Control" parent="VBox" unique_id=1524856531]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBox" unique_id=1461582300]
+custom_minimum_size = Vector2(600, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0.84313726, 0, 0.22745098, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bf1bb")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("3_j2o7p")
+theme_override_styles/read_only = ExtResource("3_j2o7p")
+theme_override_styles/focus = ExtResource("3_j2o7p")
+placeholder_text = "Input and press ENTER key"
+alignment = 1
+
+[node name="Spacer_02" type="Control" parent="VBox" unique_id=1172993998]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBox" unique_id=527515965]
+layout_mode = 2
+alignment = 1
+
+[node name="FinishAndStatButton" type="Button" parent="VBox/HBox" unique_id=96607839]
+custom_minimum_size = Vector2(360, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bf1bb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j2o7p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_51h8d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cly3p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_msl2r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tg3ls")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kxs62")
+text = "Finish and See Stats"
+
+[node name="GameContainer" type="Control" parent="." unique_id=525239506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="text_submitted" from="VBox/LineEdit" to="." method="on_LineEdit_text_submitted"]
+[connection signal="pressed" from="VBox/HBox/FinishAndStatButton" to="." method="on_FinishAndStatButton_pressed"]
