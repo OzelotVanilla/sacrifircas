@@ -52,7 +52,32 @@ autowrap_mode = 3
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="RestartGameButton" type="Button" parent="VBox" unique_id=1548551070]
+[node name="HBox" type="HBoxContainer" parent="VBox" unique_id=110678845]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="CopyResultButton" type="Button" parent="VBox/HBox" unique_id=1074268343]
+custom_minimum_size = Vector2(420, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.46666667, 0.46666667, 0.46666667, 1)
+theme_override_fonts/font = ExtResource("2_p3lui")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_wccfq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_umwp5")
+theme_override_styles/hover = ExtResource("3_wccfq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1n8hp")
+theme_override_styles/focus = ExtResource("3_wccfq")
+text = "Copy Result to Clipboard"
+
+[node name="Spacer_01" type="Control" parent="VBox/HBox" unique_id=458588426]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="RestartGameButton" type="Button" parent="VBox/HBox" unique_id=1548551070]
 custom_minimum_size = Vector2(360, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -68,4 +93,5 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_1n8hp")
 theme_override_styles/focus = ExtResource("3_wccfq")
 text = "Restart Game"
 
-[connection signal="pressed" from="VBox/RestartGameButton" to="." method="on_RestartGameButton_pressed"]
+[connection signal="pressed" from="VBox/HBox/CopyResultButton" to="." method="copyCacheToClipboard"]
+[connection signal="pressed" from="VBox/HBox/RestartGameButton" to="." method="on_RestartGameButton_pressed"]

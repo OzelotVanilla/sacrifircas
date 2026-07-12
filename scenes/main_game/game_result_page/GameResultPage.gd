@@ -2,7 +2,7 @@ class_name GameResultPage
 extends Control
 
 
-@onready var restart_game_button__ref: Button = $VBox/RestartGameButton
+@onready var restart_game_button__ref: Button = $VBox/HBox/RestartGameButton
 
 @onready var label__ref: Label = $VBox/Margin/Scroll/Label
 
