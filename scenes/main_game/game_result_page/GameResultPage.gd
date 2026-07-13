@@ -45,7 +45,7 @@ func getResultFromSave() -> String:
     for game in finished_game:
         var player_1_key := str(game, "_1")
         var player_2_key := str(game, "_2")
-        var player_3_key: String
+        var player_3_key := str(game, "_3")
         if not save_manager.save.choice_dict.has(player_1_key) \
             or not save_manager.save.choice_dict.has(player_2_key):
                 continue
@@ -58,8 +58,7 @@ func getResultFromSave() -> String:
         # 3-players game.
         if save_manager.save.choice_dict.has(player_3_key):
             player_3_key = str(game, "_3")
-            player_3_choice = save_manager.save.choice_dict[player_2_key]
-            print(player_3_choice)
+            player_3_choice = save_manager.save.choice_dict[player_3_key]
         # 2-players game.
         else:
             match game.split("_", false)[0]:

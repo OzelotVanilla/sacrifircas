@@ -38,3 +38,8 @@ var main_game__ref: MainGame
 
 static func getGameResult(player_01_choice: int, player_02_choice: int) -> String:
     return "Not Impl-ed."
+
+static func getGameResultOf3Players(
+    player_01_choice: int, player_02_choice: int, player_03_choice: int
+) -> String:
+    return "Not Impl-ed."
