@@ -3,7 +3,7 @@ extends Control
 
 
 var last_dose__scene := preload(
-    "res://scenes/last_dose/MiniGameLastDose.tscn"
+    "res://scenes/mini_games/last_dose/MiniGameLastDose.tscn"
 )
 
 

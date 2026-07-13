@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bh4wln0hgn0iu"]
 
-[ext_resource type="Script" uid="uid://ci6eqkqj1k0y" path="res://scenes/last_dose/MiniGameLastDose.gd" id="1_hvh77"]
+[ext_resource type="Script" uid="uid://ci6eqkqj1k0y" path="res://scenes/mini_games/last_dose/MiniGameLastDose.gd" id="1_hvh77"]
 [ext_resource type="PackedScene" uid="uid://b6bf46l00uje8" path="res://scenes/GameControlOverlay.tscn" id="2_u62n2"]
 [ext_resource type="FontFile" uid="uid://bdvrgt841l73v" path="res://assets/fonts/ark-pixel-12px-monospaced-latin.otf" id="3_u62n2"]
 [ext_resource type="StyleBox" uid="uid://bivtwg8cnosv0" path="res://assets/stylebox/pixel_style.tres" id="4_5eb4o"]
