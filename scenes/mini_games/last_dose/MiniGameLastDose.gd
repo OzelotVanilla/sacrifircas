@@ -43,7 +43,7 @@ func disableChoiceButtons():
         button.disabled = true
 
 func postInit():
-    self.game_control_overlay__ref.postInit() # Load stories to show, etc.
+    self.game_control_overlay__ref.postInit(self.player_side) # Load stories to show, etc.
 
 func __onReady__():
     self.player_01__ref.hide()
