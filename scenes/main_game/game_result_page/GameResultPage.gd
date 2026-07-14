@@ -59,6 +59,14 @@ func getResultFromSave() -> String:
         if save_manager.save.choice_dict.has(player_3_key):
             player_3_key = str(game, "_3")
             player_3_choice = save_manager.save.choice_dict[player_3_key]
+            match game.split("_", false)[0]:
+                "ts":
+                    game_result = str(
+                        game, ":\n",
+                        MiniGameThreshold.getGameResultOf3Players(
+                            player_1_choice, player_2_choice, player_3_choice
+                        )
+                    )
         # 2-players game.
         else:
             match game.split("_", false)[0]:

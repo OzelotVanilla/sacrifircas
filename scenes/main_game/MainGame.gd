@@ -6,6 +6,9 @@ var last_dose__scene := preload(
     "res://scenes/mini_games/last_dose/MiniGameLastDose.tscn"
 )
 
+var threshold__scene := preload(
+    "res://scenes/mini_games/threshold/MiniGameThreshold.tscn"
+)
 
 @onready var game_container__ref: Control = $GameContainer
 
@@ -33,6 +36,9 @@ func on_LineEdit_text_submitted(player_code: String) -> void:
     match level_name:
         "ld":
             scene_to_load = last_dose__scene
+
+        "ts":
+            scene_to_load = threshold__scene
 
         _:
             await self.showLineEditErrorInput(
